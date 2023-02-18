@@ -128,7 +128,7 @@ export default function Memo() {
 }
 ```
 
-**_so what can we do here with uyeMemo_** 🤔
+**_so what can we do here with useMemo_** 🤔
 
 ```js
 // ? What exactly going on here🤔❓  So in this line below we use react hooks called useMemo. Which is memoized the value off fibo function and it will render the application when useNumber dependency will change. So here useMemo element your application lag and do not effect on your application's other actions
