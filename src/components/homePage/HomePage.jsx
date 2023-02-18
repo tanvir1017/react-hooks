@@ -1,10 +1,14 @@
 import React from "react";
+import Callback from "../callback/Callback";
+import Memo from "../memo/Memo";
 
 function HomePage() {
   return (
-    <div>
-      <p>Hello from homepage</p>
-    </div>
+    <>
+      <h1>React Hooks Mastering 🚀</h1>
+      <Callback />
+      <Memo />
+    </>
   );
 }
 
