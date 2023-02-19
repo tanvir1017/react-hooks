@@ -4,10 +4,12 @@ export default function Callback() {
   const [userInput, setUserInput] = useState("");
   const [result, setResult] = useState(0);
   const [num] = useState(5);
-  const [num1] = useState(4);
+  const [num1] = useState(10);
 
-  const sum = useCallback(() => num + num1, [num1, num]);
+  const sum = useCallback(() => num + num1, [num, num1]);
   const buildArray = useCallback(() => [num, num1], [num, num1]);
+
+  // TODO : useEffect here
   useEffect(() => {
     console.log(`New array: ${buildArray()}`);
 
@@ -16,7 +18,8 @@ export default function Callback() {
 
     // ? What if? if you don't use useCallback in ➡️ buildArray() function. BuildArray function returning a new array and we are set the returned buildArray function array to the result state. So it's going to be an endless rendering loop.
     setResult(buildArray());
-  }, [buildArray]);
+    console.log(`New array builded: ${buildArray()}`);
+  }, [buildArray, sum]);
   return (
     <>
       <hr />

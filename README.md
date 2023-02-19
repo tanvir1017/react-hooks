@@ -72,7 +72,7 @@ useEffect(() => {
 
 > `useMemo` function let's you cache the expensive function value or expensive calculation between many re-renders.
 
-### 🪴 _**Use case**_ Or _**references**_
+## 🪴 _**Use case**_ Or _**references**_
 
 - Skipping the expensive recalculations
 - Skipping the rendering of components
@@ -128,9 +128,23 @@ export default function Memo() {
 }
 ```
 
-**_so what can we do here with uyeMemo_** 🤔
+## **_so what can we do here with useMemo_** 🤔
 
 ```js
 // ? What exactly going on here🤔❓  So in this line below we use react hooks called useMemo. Which is memoized the value off fibo function and it will render the application when useNumber dependency will change. So here useMemo element your application lag and do not effect on your application's other actions
 const fiboNumber = useMemo(() => fibo(useNumber), [useNumber]);
+```
+
+## **_Difference view of the useCallback & useMemo👀_**
+
+```js
+// ? So what can we do❓ If the expensive function(fibo) is inside the components we can use react hooks called useCallback as we explained it before. We know clearly know that useCallback memoized the function & useMemo memoized the function value. So if you use useCallback hooks when components has some update or state change it should be memoized the expensive function(fibo) & it knows that function has know changes or no new return stuff. It will keep the function as it is and eliminated the laggings form the app
+export default function Memo() {
+  const fibo = useCallback((n) => {
+    return n <= 1 ? n : fibo(n - 1) + fibo(n - 2);
+  }, []);
+
+  // ? What exactly going on here🤔❓ So in this line below we use react hooks called useMemo. Which is memoized the value off fibo function and it will render the application when useNumber dependency will change. So here useMemo element your application lag and do not effect on your application's other actions
+  const fiboNumber = useMemo(() => fibo(useNumber), [useNumber, fibo]);
+}
 ```
