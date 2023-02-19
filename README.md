@@ -1,10 +1,10 @@
-# REACT HOOKS 🪝 + ![vit svg](/public/vite.svg)
+# **REACT HOOKS 🪝 + ![vit svg](/public/vite.svg)**
 
 ![React hooks thumbnail for README.md](public/images/reacthooks.png)
 
 ---
 
-## Here is the list of available React hooks from their documentation 📃
+## 🪴 **_Here is the list of available React hooks from their documentation 📃_**
 
         1. useSTate most frequently use
         2. useCallback
@@ -64,7 +64,7 @@ useEffect(() => {
 }, []);
 ```
 
-## Endless reandering loop look like this 🫤
+## 🪴 **_Endless reandering loop look like this 🫤_**
 
 ![endless loop without using useCallback and returning a referential value](/public//images/without-useCallback-endless-loop.png)
 
@@ -128,18 +128,14 @@ export default function Memo() {
 }
 ```
 
-<<<<<<< HEAD
-## **_so what can we do here with useMemo_** 🤔
-=======
-**_so what can we do here with useMemo_** 🤔
->>>>>>> 118ee9dc98121837196a0059aa8609e69b0e4664
+## 🪴 **_so what can we do here with useMemo_** 🤔
 
 ```js
 // ? What exactly going on here🤔❓  So in this line below we use react hooks called useMemo. Which is memoized the value off fibo function and it will render the application when useNumber dependency will change. So here useMemo element your application lag and do not effect on your application's other actions
 const fiboNumber = useMemo(() => fibo(useNumber), [useNumber]);
 ```
 
-## **_Difference view of the useCallback & useMemo👀_**
+## 🪴 **_Difference view of the useCallback & useMemo👀_**
 
 ```js
 // ? So what can we do❓ If the expensive function(fibo) is inside the components we can use react hooks called useCallback as we explained it before. We know clearly know that useCallback memoized the function & useMemo memoized the function value. So if you use useCallback hooks when components has some update or state change it should be memoized the expensive function(fibo) & it knows that function has know changes or no new return stuff. It will keep the function as it is and eliminated the laggings form the app
