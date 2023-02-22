@@ -148,3 +148,18 @@ export default function Memo() {
   const fiboNumber = useMemo(() => fibo(useNumber), [useNumber, fibo]);
 }
 ```
+
+# useRef ➡️ `This hook  let's reference you the value that’s not needed for rendering.`
+
+## Syntax
+
+```js
+import { useRef } from "react";
+const inputRef = useRef(initialValue);
+```
+
+# **_when we have to use it_** 👈
+
+1. A value frequently changes and it nots require to render the component's. Like an input field which is changes when you type something or delete something by pressing `backspace`.
+2. We can use react hook `useRef` Instead of using the state, when the state set every value when client pressing the key, it will re-render the app in every press. useRef will reference the value and doesn't re-render the components.
+3. ⚠️ Also we can manipulate vanilla js `DOM`. So it's not the right way to manipulate dom in react by vanilla js. React came for building `single page application` by thinking in react-full way. So ti's not the good practice to manipulate `dom` using `useRef`
