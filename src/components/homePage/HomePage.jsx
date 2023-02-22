@@ -1,6 +1,7 @@
 import React from "react";
 import Callback from "../callback/Callback";
 import Memo from "../memo/Memo";
+import Reducer from "../reducer/Reducer";
 import Ref from "../ref/Ref";
 
 function HomePage() {
@@ -10,6 +11,7 @@ function HomePage() {
       <Callback />
       <Memo />
       <Ref />
+      <Reducer />
     </>
   );
 }

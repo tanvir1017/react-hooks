@@ -163,3 +163,46 @@ const inputRef = useRef(initialValue);
 1. A value frequently changes and it nots require to render the component's. Like an input field which is changes when you type something or delete something by pressing `backspace`.
 2. We can use react hook `useRef` Instead of using the state, when the state set every value when client pressing the key, it will re-render the app in every press. useRef will reference the value and doesn't re-render the components.
 3. ⚠️ Also we can manipulate vanilla js `DOM`. So it's not the right way to manipulate dom in react by vanilla js. React came for building `single page application` by thinking in react-full way. So ti's not the good practice to manipulate `dom` using `useRef`
+
+# useReducer ➡️ `useReducer let's you add `reducer` to you component.`
+
+_**And we also know reducer function reduce your work and give you more flexibility. Instead of using a lot of state ! you can handle all of your functional components state in one reducer function**_
+
+## Let's bring an example by code: 😎
+
+```js
+import { useReducer } from "react";
+
+const reducerFunc = (state, action) => {
+  switch (action.type) {
+    case "INCREMENT": {
+      return { ...state, count: state.count + 1 };
+    }
+    case "DECREMENT": {
+      return { ...state, count: state.count - 1 };
+    }
+    case "R-INPUT": {
+      return { ...state, inputText: action.payload };
+    }
+    case "TG-COLOR": {
+      return { ...state, color: !state.color };
+    }
+    default:
+      throw new Error("hey there is problem with your action");
+  }
+};
+export default function Reducer() {
+  const [state, dispatch] = useReducer(reducerFunc, {
+    count: 0,
+    inputText: "",
+    color: false,
+  });
+
+  const [count, setCount] = useState(0);
+  const [inputText, setInputText] = useState("");
+  const [color, setColor] = useState(false);
+```
+
+## Or see the example by a picture, *which is also like this code was mentioned before *🥱
+
+![useReducer picture example](/public//images//useReducer.png)
