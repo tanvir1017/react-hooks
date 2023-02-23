@@ -24,10 +24,6 @@ export default function Reducer() {
     inputText: "",
     color: false,
   });
-
-  const [count, setCount] = useState(0);
-  const [inputText, setInputText] = useState("");
-  const [color, setColor] = useState(false);
   return (
     <>
       <hr />
