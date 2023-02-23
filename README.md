@@ -211,11 +211,13 @@ export default function Reducer() {
 
 ## Everything in useEffect and useLayoutEffect is same its syntax, dependency everything. But differences between both them is:
 
-1. useEffect is asynchronous and useLayoutEffect is synchronous.
-2. useEffect is fired after rendered the page or browser paints the screen & useLayoutEffect fired the side effect before browser repaints the screen.
-   <br />
-   <br />
+- useEffect is asynchronous and useLayoutEffect is synchronous.
+- useEffect is fired after rendered the page or browser paints the screen & useLayoutEffect fired the side effect before browser repaints the screen.
+  <br />
+  <br />
 
 > Side Effect ❓
 >
-> > Side effect is something will change inside of the `useEffect` or `useLayoutEffect` if any of the state or something else like dependency (which is given to the hooks [`dependency`]) change on the page. 3. ⚠️ useEffect is mostly used instead of useLayoutEffect because useLayoutEffect is hurt the performances. 99% case you will use `useEffect` 1% case you will use `useLayoutEffect`, And the 1% is when you want to not show the changes to the client after render or browser repaints.
+> > Side effect is something will change inside of the `useEffect` or `useLayoutEffect` if any of the state or something else like dependency (which is given to the hooks [`dependency`]) change on the page.
+
+- ⚠️ useEffect is mostly used instead of useLayoutEffect because useLayoutEffect is hurt the performances. 99% case you will use `useEffect` 1% case you will use `useLayoutEffect`, And the 1% is when you want to not show the changes to the client after render or browser repaints.
