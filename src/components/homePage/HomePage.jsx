@@ -1,5 +1,6 @@
 import React from "react";
 import Callback from "../callback/Callback";
+import ImperativeHandle from "../imperativeHandle/ImperativeHandle";
 import LayoutEffect from "../layoutEffect/LayoutEffect";
 import Memo from "../memo/Memo";
 import Reducer from "../reducer/Reducer";
@@ -14,6 +15,7 @@ function HomePage() {
       <Ref />
       <Reducer />
       <LayoutEffect />
+      <ImperativeHandle />
       <footer style={{ marginBlock: "100px" }}>
         <hr />
         <div>

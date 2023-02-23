@@ -2,9 +2,18 @@
 
 ![React hooks thumbnail for README.md](public/images/reacthooks.png)
 
----
+# Here is the importance links 🔗
 
-## 🪴 **_Here is the list of available React hooks from their documentation 📃_**
+1. ## [useCallback 🪝](#usecallback "useCallback")
+2. ## [useMemo 🪝](#usememo "useMemo")
+3. ## [useRef 🪝](#useref "useRef")
+4. ## [useReducer 🪝](#usereducer "useReducer")
+5. ## [useLayoutEffect 🪝](#uselayouteffect "useLayoutEffect")
+6. ## [useImperativeHandle 🪝](#useimperativehandle "useImperativeHandle")
+
+![Start button image](/public//images//strt.png)
+
+## 🪴 **_The available React hooks📃_**
 
         1. useSTate most frequently use
         2. useCallback
@@ -22,11 +31,9 @@
         14. useSyncExternalStore
         15. useTransition
 
----
+# 👉1️⃣ useCallback
 
-# useCallback ➡️ `cache the  function between re-renders.`
-
-> `useCallback` function let's you cache the function between many re-renders.
+> > ⚓ `cache the  function between re-renders.useCallback  function let's you cache the function between many re-renders`
 
 ```js
 const [userInput, setUserInput] = useState("");
@@ -59,7 +66,7 @@ useEffect(() => {
   // ? Endless loop! For react is so smart, it can detect the same value and not changed anything because of value is same and prevent the loop. So what's going on here❓We are updating the state by setResult(sum())-(because of sum return a permeative value). When the state change react re-render component. When component re-render() useEffect called and useEffect is looking for [sum] changes and inside of the useEffect we are again change the state by putting sum() inside of setResult(). Again state change when state change react re-render components after re-render useEffect called and blah blah. It could be endless loop like this. But react can detect that value is not changing that's why it's not happing.🚀
   setResult(sum());
 
-  // ? What if? if you don't use useCallback in ➡️ buildArray() function. BuildArray function returning a new array and we are set the returned buildArray function array to the result state. So it's going to be an endless rendering loop.
+  // ? What if? if you don't use useCallback in ⚓ buildArray() function. BuildArray function returning a new array and we are set the returned buildArray function array to the result state. So it's going to be an endless rendering loop.
   setResult(buildArray());
 }, []);
 ```
@@ -68,9 +75,9 @@ useEffect(() => {
 
 ![endless loop without using useCallback and returning a referential value](/public//images/without-useCallback-endless-loop.png)
 
-# useMemo ➡️ `cache the expensive calculation or value between re-renders.`
+# 👉2️⃣ useMemo
 
-> `useMemo` function let's you cache the expensive function value or expensive calculation between many re-renders.
+> > ⚓ `cache the expensive calculation or value between re-renders. useMemo function let's you cache the expensive function value or expensive calculation between many re-renders.`
 
 ## 🪴 _**Use case**_ Or _**references**_
 
@@ -87,7 +94,7 @@ const fibo = (n) => {
 };
 export default function Memo() {
   const [useNumber, setUseNumber] = useState(0);
-  // ?🔖 reference from line number 116 - 126. 🤯  Why this states input will slow❓Cause from react useState we know that when we change any of state in react app the app will render for every changes. So whenever we type a new word or input it set the input to the randomInput state. ➡️ When it's setting the value app will render ➡️ When render the app the fiboNumber variable call the fibonacci function and regenerate the value again. Also we know that fibonacci function is so expensive about performance. So if you give the long value above the  30 the function will goes to expensive in performance. And lag your app instantly.
+  // ?🔖 reference from line number 116 - 126. 🤯  Why this states input will slow❓Cause from react useState we know that when we change any of state in react app the app will render for every changes. So whenever we type a new word or input it set the input to the randomInput state. ⚓ When it's setting the value app will render ⚓ When render the app the fiboNumber variable call the fibonacci function and regenerate the value again. Also we know that fibonacci function is so expensive about performance. So if you give the long value above the  30 the function will goes to expensive in performance. And lag your app instantly.
   const [randomInput, setRandomInput] = useState("");
 
   const fiboNumber = fibo(useNumber);
@@ -149,7 +156,9 @@ export default function Memo() {
 }
 ```
 
-# useRef ➡️ `This hook  let's reference you the value that’s not needed for rendering.`
+# useRef
+
+> > ⚓ `This hook  let's reference you the value that’s not needed for rendering.`
 
 ## Syntax
 
@@ -164,7 +173,9 @@ const inputRef = useRef(initialValue);
 2. We can use react hook `useRef` Instead of using the state, when the state set every value when client pressing the key, it will re-render the app in every press. useRef will reference the value and doesn't re-render the components.
 3. ⚠️ Also we can manipulate vanilla js `DOM`. So it's not the right way to manipulate dom in react by vanilla js. React came for building `single page application` by thinking in react-full way. So ti's not the good practice to manipulate `dom` using `useRef`
 
-# useReducer ➡️ `useReducer let's you add `reducer` to you component.`
+# useReducer
+
+> > ⚓ `useReducer let's you add `reducer` to you component.`
 
 _**And we also know reducer function reduce your work and give you more flexibility. Instead of using a lot of state ! you can handle all of your functional components state in one reducer function**_
 
@@ -207,7 +218,9 @@ export default function Reducer() {
 
 ![useReducer picture example](/public//images//useReducer.png)
 
-# useLayoutEffect ➡️ `useLayoutEffect works before browser repaints the screen.`
+# useLayoutEffect
+
+> > ⚓ `useLayoutEffect works before browser repaints the screen.`
 
 ## Everything in useEffect and useLayoutEffect is same its syntax, dependency everything. But differences between both them is:
 
@@ -221,3 +234,65 @@ export default function Reducer() {
 > > Side effect is something will change inside of the `useEffect` or `useLayoutEffect` if any of the state or something else like dependency (which is given to the hooks [`dependency`]) change on the page.
 
 - ⚠️ useEffect is mostly used instead of useLayoutEffect because useLayoutEffect is hurt the performances. 99% case you will use `useEffect` 1% case you will use `useLayoutEffect`, And the 1% is when you want to not show the changes to the client after render or browser repaints.
+
+# useImperativeHandle
+
+> > ⚓ `useImperativeHandle lets you give access to the child components to the parent components`
+
+. In useImperativeHandle Hooks we need to use two more hooks with useImperativeHandle Hooks.
+
+1.  useRef **_for keep reference the child component function or action_**
+2.  forwardRef **_for forwarding the child components to the parents when we export the functional components_**
+3.  useImperativeHandle **_This hooks use inside the child components and everything inside of the hooks are available on parent hooks by `ref.current`_**
+
+### when we use this hooks and call the child components from parents we have to add useRef, because this ref will keep the reference from child. Also the child component will take two parameter
+
+1. props **must be in parameter**,
+2. ref **which will take the useRef from parents**
+
+👉 let's bring an example:
+
+<button>Child components</button>
+
+```js
+function ModalChild(props, ref) {
+  console.log("ref from child", ref);
+  const [modalState, setModalState] = useState(false);
+  const obje = {
+    name: "Tanvir Hossain",
+    age: 20,
+  };
+  useImperativeHandle(ref, () => ({
+    modalState,
+    obje,
+    openModal: () => setModalState(true),
+  }));
+
+  if (!modalState) return null;
+  console.log("child component rendered");
+  return <>jsx</>;
+}
+
+export default forwardRef(ModalChild);
+```
+
+<button>Parent's components</button>
+
+```js
+import ModalChild from "./ModalChild";
+
+export default function ImperativeHandle() {
+  const modalRef = useRef();
+
+  const handleModalOpenRef = () => {
+    modalRef.current.openModal();
+  };
+
+  console.log("parent rendered");
+  return (
+    <>
+      <ModalChild ref={modalRef} />
+    </>
+  );
+}
+```
