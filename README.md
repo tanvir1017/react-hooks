@@ -237,7 +237,7 @@ export default function Reducer() {
 
 # useImperativeHandle
 
-> > ⚓ `useImperativeHandle lets you give access to the child components to the parent components`
+> > ⚓ `useImperativeHandle lets you give access to the child components to the inside of parent components`
 
 . In useImperativeHandle Hooks we need to use two more hooks with useImperativeHandle Hooks.
 
@@ -296,3 +296,7 @@ export default function ImperativeHandle() {
   );
 }
 ```
+
+# useDebugValue
+
+> > ⚓ `useDebugValue lets you send some informative data to the React DEV__TOOLS, to keep your current status of your code`

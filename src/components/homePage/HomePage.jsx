@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Callback from "../callback/Callback";
+import { Debug } from "../debug/Debug";
 import ImperativeHandle from "../imperativeHandle/ImperativeHandle";
 import LayoutEffect from "../layoutEffect/LayoutEffect";
 import Memo from "../memo/Memo";
@@ -9,13 +11,18 @@ import Ref from "../ref/Ref";
 function HomePage() {
   return (
     <>
-      <h1>React Hooks Mastering 🚀</h1>
+      <h1>React Hooks Mastering 🚀 </h1> <Link to="contacts/2">Contact</Link>
+      <p></p>
+      <Link to="data">
+        <button>Data</button>
+      </Link>
       <Callback />
       <Memo />
       <Ref />
       <Reducer />
       <LayoutEffect />
       <ImperativeHandle />
+      <Debug />
       <footer style={{ marginBlock: "100px" }}>
         <hr />
         <div>

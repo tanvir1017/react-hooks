@@ -33,6 +33,7 @@ h1 {
   width: 20rem;
   height: 10rem;
   padding: 2px 5px;
+  border-radius: 15px;
 }
 .modal--button {
   position: absolute;
@@ -42,7 +43,8 @@ h1 {
   background-color: #ffffff;
   outline: transparent;
   border: transparent;
-  padding: 5px 2px;
+  padding: 5px 4px;
+  border-radius: 10px;
 }
 button {
   cursor: pointer;
