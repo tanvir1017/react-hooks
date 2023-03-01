@@ -9,7 +9,7 @@ export default function Callback() {
   const sum = useCallback(() => num + num1, [num, num1]);
   const buildArray = useCallback(() => [num, num1], [num, num1]);
 
-  // TODO : useEffect here
+  // COMMENT  : useEffect here
   useEffect(() => {
     console.log(`New array: ${buildArray()}`);
 

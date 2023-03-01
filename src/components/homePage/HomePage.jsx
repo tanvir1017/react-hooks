@@ -7,6 +7,7 @@ import LayoutEffect from "../layoutEffect/LayoutEffect";
 import Memo from "../memo/Memo";
 import Reducer from "../reducer/Reducer";
 import Ref from "../ref/Ref";
+import Transitions from "../transitions/Transitions";
 
 function HomePage() {
   return (
@@ -23,6 +24,7 @@ function HomePage() {
       <LayoutEffect />
       <ImperativeHandle />
       <Debug />
+      <Transitions />
       <footer style={{ marginBlock: "100px" }}>
         <hr />
         <div>

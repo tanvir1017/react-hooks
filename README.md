@@ -10,6 +10,8 @@
 4. ## [useReducer 🪝](#usereducer "useReducer")
 5. ## [useLayoutEffect 🪝](#uselayouteffect "useLayoutEffect")
 6. ## [useImperativeHandle 🪝](#useimperativehandle "useImperativeHandle")
+7. ## [useDebugValue 🪝](#usedebugvalue "useDebugValue")
+8. ## [useTransition-🪝](#usetransition "usetransition")
 
 ![Start button image](/public//images//strt.png)
 
@@ -300,3 +302,45 @@ export default function ImperativeHandle() {
 # useDebugValue
 
 > > ⚓ `useDebugValue lets you send some informative data to the React DEV__TOOLS, to keep your current status of your code`
+
+# useTransition
+
+> > ⚓ `useTransition . It will lets you update the state without blocking the Ui. It does not take any parameters and returns an array with exactly two items.
+
+1. isPending
+2. startTransition function
+
+   The `isPending` flag tells you whether there is a pending function.Another one (`startTransition`) function that let's you update the state without ui blocking as a transition`
+
+This hooks you may use frequently. ⚠️ On more thing is wit will renders many. When you see something (state) is sluggish you app or block the ui then you can use it for instant update the state and show the current status by isPending items
+
+👉 Let's see an example:
+
+```js
+const Transitions = () => {
+  const [counter, setCounter] = useState(0);
+  const [items, setItems] = useState([]);
+  const [isPending, startTransition] = useTransition();
+  const handleToDoTransitions = () => {
+    setCounter((prev) => prev + 1);
+
+    startTransition(() => {
+      const itemsArray = Array(20000)
+        .fill(1)
+        .map((el, i) => counter + 20000 - i);
+      setItems(itemsArray);
+    });
+  };
+  return (
+    <div>
+      <button onClick={handleToDoTransitions}>{counter}</button>
+      {isPending ? <p>loading....</p> : null}
+      <ul>
+        {items.map((el) => (
+          <li key={el}>{el}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+```
