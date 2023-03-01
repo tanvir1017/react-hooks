@@ -6,6 +6,7 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Contact from "./components/Contact";
 import { Debug } from "./components/debug/Debug";
+import DeferredValue from "./components/defferedValue/DeferredValue";
 import { AxiosData } from "./components/useAxios/AxiosData";
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "data",
     element: <AxiosData />,
+  },
+  {
+    path: "search",
+    element: <DeferredValue />,
   },
 ]);
 

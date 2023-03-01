@@ -344,3 +344,37 @@ const Transitions = () => {
   );
 };
 ```
+
+# useDeferredValue
+
+> > ⚓ `useDeferredValue. This react hook look like work as debounce do. But it has difference. It will keep the data until the re-render happened and state change. Means? Let us a state which will keep our onChange value from an input when we change something in input it will update the state with input value instantly and re-render the component.`
+
+```js
+const [query, setQuery] = useState("")
+//  render return
+//  So when we change something it will re-render the components and update the state every time
+<input type="text" value={query} onChange={(e) => setQuery(e.target.value)}  />
+```
+
+## 🚀 Instead if we use useDeferredValue
+
+```js
+const [query, setQuery] = useState("")
+// useDeferredValue
+const deferredValue = useDeferredValue(query)
+const [isPending, startTransition] = useTransition()
+
+useEffect(() => {
+  startTransition( () => {
+    console.log(deferredValue)
+  })
+}, [deferredValue])
+//  render return
+//  So when we change something it will re-render the components and update the state every time
+<input type="text" value={query} onChange={(e) => setQuery(e.target.value)}  />
+```
+
+## So what's going on actually 😟?
+
+Let me explain the hooks and behavior of `useDeferredValue` Hooks.
+So here we are setting the default `useDeferredValue` value what we will have from the input. So according to the behavior of the onChange it will keep track your every changes, so now when we change something it will set the input value to the `setQuery` function. When it set the value to the function the component will re-render and update the state.In particular, React will first re-render without updating the deferred value, and then try to re-render with the newly received value in background.

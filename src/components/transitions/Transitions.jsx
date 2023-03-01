@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 const { useTransition, useState } = React;
 const Transitions = () => {
@@ -41,6 +42,12 @@ const Transitions = () => {
           <li key={el}>{el}</li>
         ))}
       </ul>
+
+      <div>
+        <Link to="search">
+          <h1>useDeferredValue Hooks</h1>
+        </Link>
+      </div>
     </>
   );
 };
