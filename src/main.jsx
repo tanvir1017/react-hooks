@@ -4,31 +4,11 @@ import App from "./App";
 import "./index.css";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Contact from "./components/Contact";
-import { Debug } from "./components/debug/Debug";
-import DeferredValue from "./components/defferedValue/DeferredValue";
-import { AxiosData } from "./components/useAxios/AxiosData";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "/debug",
-    element: <Debug />,
-  },
-  {
-    path: "contacts/:contactID",
-    element: <Contact />,
-  },
-  {
-    path: "data",
-    element: <AxiosData />,
-  },
-  {
-    path: "search",
-    element: <DeferredValue />,
   },
 ]);
 

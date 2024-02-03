@@ -1,7 +1,12 @@
-import HomePage from "./components/homePage/HomePage";
+import ReactUseMemo from "./components/react-hooks/use-memo";
 
 function App() {
-  return <HomePage />;
+  return (
+    <main>
+      <h1>React hooks</h1>
+      <ReactUseMemo />
+    </main>
+  );
 }
 
 export default App;
